@@ -1,0 +1,27 @@
+{
+  "name": "alx-backend-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-jest": "^29.4.0",
+    "eslint": "^8.32.0",
+    "jest": "^29.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/ExtranoDev/alx-backend-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ExtranoDev/alx-backend-javascript/issues"
+  },
+  "homepage": "https://github.com/ExtranoDev/alx-backend-javascript#readme"
+}
