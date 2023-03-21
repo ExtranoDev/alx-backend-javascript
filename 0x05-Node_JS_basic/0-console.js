@@ -1,8 +1,8 @@
+#!/usr/bin/node
 // Basic node.js code
 
 function displayMessage(msg) {
-  msg += '\n';
-  process.stdout.write(msg);
+  console.log(msg);
 }
 
 module.exports = displayMessage;
