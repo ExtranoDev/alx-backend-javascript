@@ -1,8 +1,8 @@
 #!/usr/bin/node
 /*
-* Using Process stdin
-* 
-*/ 
+ * Using Process stdin
+ * 
+ */ 
 
 console.log("Welcome to Holberton School, what is your name?");
 process.stdin.on('readable', function() {
