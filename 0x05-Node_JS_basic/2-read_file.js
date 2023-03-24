@@ -10,26 +10,28 @@ function countStudents(path) {
   } catch (err) {
     throw new Error('Cannot load the database');
   }
-  
+
   data = data.split('\n');
   data.shift();
   data.pop();
-  const pro_data = new Object();
-  
+  const proData = {};
+
   data.forEach((stud) => {
     const temp = stud.split(',');
-    const temp_key = temp.slice(-1);
-    if (temp_key in pro_data) {
-      pro_data[temp_key].count += 1;
-      pro_data[temp_key].names += `, ${temp[0]}`;
+    const tempKey = temp.slice(-1);
+    if (tempKey in proData) {
+      proData[tempKey].count += 1;
+      proData[tempKey].names += `, ${temp[0]}`;
     } else {
-      pro_data[temp_key] = {'count': 1, 'names': temp[0]};
+      proData[tempKey] = { count: 1, names: temp[0] };
     }
   });
-  
+
   console.log(`Number of students: ${data.length}`);
-  for (const field in pro_data) {
-    console.log(`Number of students in ${field}: ${pro_data[field].count}. List: ${pro_data[field].names}`);
+  for (const field in proData) {
+    if (field) {
+      console.log(`Number of students in ${field}: ${proData[field].count}. List: ${proData[field].names}`);
+    }
   }
 }
 

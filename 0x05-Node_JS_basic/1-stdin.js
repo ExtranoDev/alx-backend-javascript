@@ -1,14 +1,14 @@
 #!/usr/bin/node
 /*
  * Using Process stdin
- * 
- */ 
+ *
+ */
 
-console.log("Welcome to Holberton School, what is your name?");
+console.log('Welcome to Holberton School, what is your name?');
 process.stdin.on('readable', () => {
   const name = process.stdin.read();
   if (name !== null) {
-    process.stdout.write("Your name is: " + name.toString());
+    process.stdout.write(`Your name is: ${name.toString()}`);
   }
 });
 
