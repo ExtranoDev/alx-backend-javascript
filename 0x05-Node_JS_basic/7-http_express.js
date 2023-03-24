@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// HTTP server using Node's HTTP module
+// Express server using Node's express module
 
 const express = require('express');
 
