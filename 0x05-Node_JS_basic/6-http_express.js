@@ -10,4 +10,6 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-app.listen(port);
+app.listen(port, '127.0.0.1');
+
+module.exports = app;
