@@ -3,7 +3,7 @@
 
 const chai = require('chai');
 const expect = chai.expect;
-const calculateNumber = require("./1-calcul_chai.js");
+const calculateNumber = require("./2-calcul_chai.js");
 
 describe('calculateNumber', function () {
   it('Confirms SUM output', function () {
@@ -15,7 +15,7 @@ describe('calculateNumber', function () {
     expect(calculateNumber('SUBTRACT', 2, 4.8)).to.equal(-3);
   });
   it('Confirms DIVIDE', function () {
-    expect(calculateNumber('DIVIDE', 2.3, 0)).to.eqaul('Error');
+    expect(calculateNumber('DIVIDE', 2.3, 0)).to.equal('Error');
     expect(calculateNumber('DIVIDE', 15, 3.2)).to.equal(5);
   });
   it('Check arguements', function () {
