@@ -5,28 +5,29 @@ const fs = require('fs');
 
 function readDatabase(path) {
   return new Promise ((resolve, reject) => {
-    try {
-      data = fs.readFile(path, 'utf-8');
-    } catch (err) {
-      reject(err.message);
-    }
-
-    data = data.split('\n');
-    data.shift();
-    data.pop();
-    const proData = {};
-
-    data.forEach((stud) => {
-      const temp = stud.split(',');
-      const tempKey = temp.slice(-1);
-      if (tempKey in proData) {
-        proData[tempKey].names += `, ${temp[0]}`;
+    fs.readFile(path, 'utf-8', (err, data) => {
+      if (err) {
+        reject(Error(err));
       } else {
-        proData[tempKey] = { names: temp[0] };
+        data = data.split('\n');
+        data.shift();
+        data.pop();
+
+        const proData = {};
+
+        data.forEach((stud) => {
+          const temp = stud.split(',');
+          const tempKey = temp.slice(-1);
+          if (tempKey in proData) {
+            proData[tempKey].push(temp[0]);
+          } else {
+            proData[tempKey] = [temp[0]];
+          }
+        });
+        resolve(proData);
       }
     });
-    resolve(proData);
-  });
+  });    
 }
 
 module.exports = readDatabase;
