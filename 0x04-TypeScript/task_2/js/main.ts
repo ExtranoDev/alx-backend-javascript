@@ -43,13 +43,18 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
-function isDirector(employee: Director | Teacher) {
+function isDirector(employee: Director | Teacher): boolean {
   return (employee instanceof Director) ? true : false;
 }
 
-function executeWork(employee: Director | Teacher) {
+function executeWork(employee: Director | Teacher): string {
   if (employee instanceof Director) return employee.workDirectorTasks();
   else if (employee instanceof Teacher) return employee.workTeacherTasks();
 }
 
+type Subjects = 'Math' | 'History';
 
+function teachClass(todayClass: Subjects): string {
+  if (todayClass == 'Math') return 'Teaching Math';
+  else if (todayClass == 'History') return 'Teaching History';
+}
